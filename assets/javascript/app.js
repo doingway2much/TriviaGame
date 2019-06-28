@@ -1,5 +1,3 @@
-
-
 var questions = [
     {
         question: "In the 'Road Runner and Coyote' cartoons, what famous sound does the Road Runner make?",
@@ -18,6 +16,14 @@ var questions = [
     },
 ]
 
+var interval = setInterval(function() {
+    counter--;
+    $("#counter").text(counter);
+    if (counter == 0) {
+       alert("Times up you")
+        clearInterval(interval);
+    }
+}, 1000);
 
 var questionsList = [];
 var pastQuestions = [];
