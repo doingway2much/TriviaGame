@@ -1,7 +1,21 @@
 body {
+    background-image: url("http://11points.com/wp-content/uploads/2016/06/millionaireanswers-1600.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: white;
 }
 
 .container {
-    background-color: red;
+    margin-top: 25px;
+    height: 600px;
+    background-color: white;
+}
+
+.start {
+    margin-top: 180px;
+
+}
+
+.btn-anwsers {
+    margin: 25px;
 }
