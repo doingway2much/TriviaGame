@@ -17,9 +17,17 @@ var random =[];
 data.random
 console.log(data.question1.question);
 console.log(data.question1.anwsers.length);
+var counter = 10;
 
 
-
+var interval = setInterval(function() {
+    counter--;
+    $("#counter").text(counter);
+    if (counter == 0) {
+       alert("Times up you")
+        clearInterval(interval);
+    }
+}, 1000);
 
 $("#startGame").click(function() {
     $("#startGame").detach();
