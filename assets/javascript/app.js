@@ -25,23 +25,39 @@ var counter = 10;
 
 var questionsList = [];
 var pastQuestions = [];
-var andomQuestion = [];
+var randomQuestion = [];
 
 function random(){
 randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-pastQuestion = randomQuestion.question;
-pastQuestions.push(pastQuestion + "");
-// console.log(pastQuestion);
+tmp = randomQuestion.question;
+pastQuestions.push(tmp + "");
+// console.log(pastQuestions);
 }
 random();
 // console.log(randomQuestion);
 
 
 function generateDivs(){
+    //Generate the text for the question
     $("#question").prepend("<h2 id='tmp'>" + randomQuestion.question + "</h2>");
+    //Put previous question in an array 
+    // pastQuestions.push(randomQuestion.question + "");
+    //Generate the buttons for the DIV
     for(i = 0; i< randomQuestion.anwsers.length; i++) {
     $(".anwsers").prepend("<button id=" + "'" + randomQuestion.anwsers[i] + "'" + "type='button' class='btn btn-primary btn-lg btn-anwsers'>" + randomQuestion.anwsers[i] + "</button>");
     }};
+
+function checkQuestion(){
+    for(i = 0; i < questionsList.length; i++){
+        if (Object.values(questionsList).indexOf(pastQuestions) > -1){
+            console.log("The value was there");
+        
+        }else{
+    
+        }
+    }
+};
+
 
 function detachDivs(){
     $("#tmp").detach();
@@ -51,23 +67,32 @@ function detachDivs(){
 
 
 $("#startGame").click(function() {
-    setInterval(function() {
-        counter--;
-        $("#counter").text(counter);
-    }, 1000);
+    // setInterval(function() {
+    //     counter--;
+    //     $("#counter").text(counter);
+    // }, 1000);
     $("#startGame").detach();
         generateDivs();
-        $(".btn-anwsers").click(function() {
+        $(".btn-anwsers").on("click", function() {
         console.log(this.id);
+        if (this.id !== randomQuestion.corectAnwser && counter > 0){
+            alert("You picked the wrong anwser");
+        };
         if(this.id === randomQuestion.corectAnwser && counter > 0) {
             alert("You picked the right anwser");
-            random();
             detachDivs();
-            generateDivs();
-            console.log(randomQuestion);        
-            counter = 10;
-        } else {
-            alert("You picked the wronganwser");
+            $(".response").prepend("<h2 id='congrats'>Great job....." + "'" + randomQuestion.corectAnwser + "'" + " was the correct anwser</h2>");
+
+            // randomQuestion = [];
+            // random();
+            // checkQuestion();
+            
+            // generateDivs();
+            // console.log(pastQuestions);    
+            // console.log(randomQuestion);      
+            // counter = 10;
+            
         }});
+        
    
-    });
+});
