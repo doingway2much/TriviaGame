@@ -72,15 +72,7 @@ function generateDivs(){
     $(".anwsers").prepend("<button id=" + "'" + questions[numberOfQuestions].anwsers[i] + "'" + "type='button' class='btn btn-primary btn-lg btn-anwsers'>" + questions[numberOfQuestions].anwsers[i] + "</button>");
     }};
 
-function checkQuestion(){
-    for(i = 0; i < questionsList.length; i++){
-        if (Object.values(questionsList).indexOf(pastQuestions) > -1){
-            console.log("The value was there");
-            }else{
-    
-        }
-    }
-};
+
 
 // Timer function
 function timerHolder() {
@@ -135,7 +127,18 @@ function detachDivs(){
     $(".btn-anwsers").detach();
 };
 
+$(".end").on("click", "#playAgain", function() {
+    audio.play();
+    rightAnwsers =0;
+    wrongAnwsers =0;
+    notAnwsered =0;
+    numberOfQuestions =0;
+    $(".ending").detach();
+$   ("#playAgain").detach();
 
+generateDivs();
+timerHolder();
+});
 
 $("#startGame").click(function() {
     audio.play();
@@ -148,7 +151,6 @@ timerHolder();
 
 
 $(".anwsers").on("click", ".btn-anwsers", function() {
-    // timerHolder();
         console.log(this.id);
         if (this.id !== questions[numberOfQuestions].corectAnwser && counter > 0){
             clearInterval(clock);
@@ -166,11 +168,12 @@ function endGame(){
   audio.pause();
   detachDivs();
   $("#response").detach();
-  $(".end").html("<h2 id='congrats'>Here is how you did: </h2>");
-  $(".end").append("<h3 id'results'>Corect Anwsers: " + rightAnwsers);
-  $(".end").append("<h3 id'results'>Wrong Anwsers: " + wrongAnwsers);
-  $(".end").append("<h3 id'results'>Not Anwsered: " + notAnwsered);
-  $(".end").prepend("<img id='clap' src='https://media0.giphy.com/media/CiZuWYvJ1hnoI/giphy.gif'></img>");
+  $(".end").html("<h2 id='congrats' class='ending'>Here is how you did: </h2>");
+  $(".end").append("<h3 id'results' class='ending'>Corect Anwsers: " + rightAnwsers);
+  $(".end").append("<h3 id'results' class='ending'>Wrong Anwsers: " + wrongAnwsers);
+  $(".end").append("<h3 id'results' class='ending'>Not Anwsered: " + notAnwsered);
+  $(".end").prepend("<img id='clap' class='ending' src='https://media0.giphy.com/media/CiZuWYvJ1hnoI/giphy.gif'></img>");
+  $(".end").append("<button id='playAgain' type='button' class='btn btn-primary btn-lg'>Play Agian</button>");
 //   if(rightAnwser > wrongAnwsers){
 //     console.log("It should ofput the gif up");
 //     $(".end").append("<img src='https://media0.giphy.com/media/CiZuWYvJ1hnoI/giphy.gif'></img>");
