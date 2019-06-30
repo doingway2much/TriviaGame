@@ -30,29 +30,31 @@
 
     <div class="container">
             <div class="jumbotron-fluid">
-                    <h1 class="display-4">Who Wants to Be a Millionaire</h1>
-                    <p class="lead">Click the start game button blow to start a new game. Once the button is clicked you will 5
+                    <h1 class="display-4">Trivia Game</h1>
+                    <p class="lead">Click the "Start Game" button below to start a new game. Once the button is clicked you will 10
                         seconds to anwser the question.
                     </p>
         </div>
         <div class="counter text-center">
-        <div id='wins'>
-        <button id="counter" class="btn btn-primary btn-lg">Time: 10</button>
-        <div id ="losses">
-        <!-- <button id="wins" class="btn btn-primary btn-lg">Wins: 0</button> -->
-        <!-- <button id="losses" class="btn btn-primary btn-lg">Losses: 0</button>
-        <button id="notAnwsered" class="btn btn-primary btn-lg">Not Anwsered: 0</button> -->
+        <button id="wins" class="custom winner">Correct: 0</button>
+        <button id="losses" class="custom looser">Wrong: 0</button>
+        <button id="notAnwsered" class="custom timesUp">Not Anwsered: 0</button>
+        <button id="counter" class="custom time">Time: 10</button>
 </div>
-</div>
-</div>
+
+
         <div class="start text-center">
         <button id="startGame" type="button" class="btn btn-primary btn-lg">Start Game</button>
         </div>
-        <div id="question"></div>
+        <div class="game">
+        <div class="question text-center"></div>
         <div class="anwsers text-center"></div>
-        <div class="response"></div>
-        
+      
+        <h2 class="response text-center"></h2>
+        <div class="end text-center"></div> 
+        </div>
     </div>
+</div>
         
 
 

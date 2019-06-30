@@ -1,21 +1,86 @@
 body {
-    background-image: url("http://11points.com/wp-content/uploads/2016/06/millionaireanswers-1600.jpg");
+    background-image: url("https://www.tubefilter.com/wp-content/uploads/2017/04/price-is-right-social-media-is-awesome.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: white;
+    /* background-color: white; */
 }
 
+.jumbotron-fluid {
+    color: black;
+    height: 150px;
+    background-image: url("../images/bg.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.display-4 {
+    margin-left: 250px;
+}
+
+.lead{
+    margin-left: 250px;
+
+}
 .container {
+    border-radius: 25px;
     margin-top: 25px;
-    height: 600px;
+    height: 800px;
     background-color: white;
+    
+    
 }
 
 .start {
-    margin-top: 180px;
+    margin-top: 200px;
+  
 
+}
+
+.end {
+    margin-top: -175px;
 }
 
 .btn-anwsers {
     margin: 25px;
+}
+
+.counter {
+    margin-top: 25px;
+
+}
+
+#clap {
+    margin: 25px;
+}
+.custom {
+    border-radius: 15px;
+    margin-left: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: green;
+    height: 50px;
+    min-width: 150px;
+    color: white;
+    font-weight: bold;
+}
+ .game {
+    border-radius: 25px;
+     background-color: hsla(90, 100%, 50%, 0.5)	/* 50% opaque blue */
+     /* opacity: 0.2; */
+ }
+.winner{
+    background-color: red;
+}
+
+.looser  {
+    background-color: blue;
+}
+
+.timesUp {
+    background-color: #ffd700;
+}
+
+.time {
+    background-color: limegreen;
 }
