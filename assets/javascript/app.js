@@ -72,7 +72,7 @@ var questions = [
 ]
 
 var numberOfQuestions = 0;
-var counter = 10;
+var counter = 15;
 var clock;
 var rightAnwsers = 0;
 var wrongAnwsers = 0;
@@ -96,7 +96,7 @@ function ticker() {
         $("#response").detach();
         $("#responseImg").detach();
         generateDivs();
-        counter = 10;
+        counter = 15;
         timerHolder();
     } else {
         endGame();
@@ -135,7 +135,7 @@ function timesUp(){
     $("#notAnwsered").html("Not Anwsered: " + notAnwsered); 
     detachDivs();
     $(".response").prepend("<h2 id='response'>You took too long to anwser the questiong....." + "'" + questions[numberOfQuestions].corectAnwser + "'" + " was the correct anwser!!!</h2>");
-    setTimeout(ticker, 2000);
+    setTimeout(ticker, 5000);
     detachDivs();
 }
 
@@ -145,7 +145,7 @@ function wrongAnwser(){
     detachDivs();
     $(".response").prepend("<img id='responseImg' class='quickImage' src='" + questions[numberOfQuestions].fail + "'" +  "></img>");
     $(".response").prepend("<h2 id='response'>Too bad....." + "'" + questions[numberOfQuestions].corectAnwser + "'" + " was the correct anwser.  Better luck next time.</h2>");
-    setTimeout(ticker, 2000);
+    setTimeout(ticker, 5000);
     detachDivs();
     };
 
@@ -156,7 +156,7 @@ function rightAnwser(){
     detachDivs();
     $(".response").prepend("<img id='responseImg' class='quickImage' src='" + questions[numberOfQuestions].url + "'" +  "></img>");
     $(".response").prepend("<h2 id='response'>Great job....." + "'" + questions[numberOfQuestions].corectAnwser + "'" + " was the correct anwser</h2>");
-    setTimeout(ticker, 2000);
+    setTimeout(ticker, 5000);
     detachDivs();
     };
 
