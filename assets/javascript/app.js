@@ -209,7 +209,7 @@ function endGame(){
   $(".end").prepend("<img id='clap' class='ending' src='https://media0.giphy.com/media/CiZuWYvJ1hnoI/giphy.gif'></img>");
   $(".end").append("<button id='playAgain' type='button' class='pr'>Play Agian</button>");
 
-    if(wrongAnwsers < 5 || notAnwsered < 5){
+    if(wrongAnwsers > 5 || notAnwsered > 5){
         horn.play();
     }
   };
