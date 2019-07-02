@@ -170,6 +170,7 @@ $(".end").on("click", "#playAgain", function() {
     rightAnwsers =0;
     wrongAnwsers =0;
     notAnwsered =0;
+    counter = 15;
     numberOfQuestions =0;
     $(".ending").detach();
 $   ("#playAgain").detach();
