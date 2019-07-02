@@ -1,7 +1,7 @@
 # TriviaGame
 This is a trivia game that I created for week 5 of my Georgia Tech Coding boot camp
 
-THis game has a "Price is Right" theme.
+This game has a "Price is Right" theme.
 
 The rules are:
 
